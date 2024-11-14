@@ -42,8 +42,20 @@ public class MenuCUI {
 		while(true) {
 			screenOutput.print(prompt);screenOutput.flush();
 			command = keyBoardInput.nextLine();//"help"
+			command = command.trim();
+			
+			if("help".equalsIgnoreCase(command)) {
+				help();//gọi đến hàm help
+			}
+			
 		}
 
+	}
+	
+	private void help() {
+		screenOutput.println("~~~~~~~~~~Console Help Menu~~~~~~~~~");
+		screenOutput.println("[HELP] - Ho tro su dung phan mem");
+		screenOutput.println("~~~~~~~~~~Console Help Menu~~~~~~~~~");
 	}
 	
 	

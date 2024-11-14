@@ -8,7 +8,7 @@ public class AppSinhVien {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//sử dụng Class MenuCUI
-		PrintWriter pWriterRemote = new PrintWriter(System.out);
+		PrintWriter pWriterRemote = new PrintWriter(System.out, true);
 		Scanner scannerRemote = new Scanner(System.in);
 		
 		MenuCUI menuCUIRemote = new MenuCUI(pWriterRemote, 
