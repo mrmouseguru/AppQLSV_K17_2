@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
+import control.ThemMoiSVControl;
 import entity.SinhVienKT;
 import entity.SinhVienKTPM;
 
@@ -18,6 +19,7 @@ public class ThongTinSVCUI {
 	diaChiPrompt, diemJavaPrompt, diemCssPrompt, diemHtmlPrompt,
 	diemMarketingPrompt, diemSalesPrompt;
 	private SimpleDateFormat simpleFormat = null;
+	private ThemMoiSVControl themSVControl = null;
 	//functions - methods
 	public ThongTinSVCUI() {
 		
@@ -68,9 +70,10 @@ public class ThongTinSVCUI {
 			screenOutput.print(diemHtmlPrompt);screenOutput.flush();
 			double diemHtml = keyBoardInput.nextDouble();
 			
-			//đối tượng sinh viên phần mềm
-			SinhVienKTPM svpm = new SinhVienKTPM(hoTen, diaChi, ngaySinhJava, 
-					diemJava, diemCss, diemHtml);
+			
+			//gửi thông điệp cho đối tượng ThemMoiSVControl
+			//kèm theo dữ liệu là các biến
+			themSVControl.taoSinhVien(hoTen, diaChi, ngaySinhJava, diemJava, diemCss, diemHtml);
 		}
 		
 		if("KT".equalsIgnoreCase(nganh)) {
@@ -79,9 +82,7 @@ public class ThongTinSVCUI {
 			screenOutput.print(diemSalesPrompt);screenOutput.flush();
 			double diemSales = keyBoardInput.nextDouble();
 			
-			//đối tượng sinh viên kinh tế
-			SinhVienKT svkt = new SinhVienKT(hoTen, diaChi, ngaySinhJava, 
-					diemMarketing, diemSales);
+			themSVControl.taoSinhVien(hoTen, diaChi, ngaySinhJava, diemSales, diemMarketing, diemSales);
 		}
 	}
 
