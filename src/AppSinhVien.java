@@ -2,6 +2,7 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 import ui.MenuCUI;//phụ thuộc
+import ui.ThongTinSVCUI;
 
 public class AppSinhVien {
 
@@ -11,8 +12,11 @@ public class AppSinhVien {
 		PrintWriter pWriterRemote = new PrintWriter(System.out, true);
 		Scanner scannerRemote = new Scanner(System.in);
 		
+		ThongTinSVCUI ttSVCUIRemote = new 
+				ThongTinSVCUI(pWriterRemote, scannerRemote);
+		
 		MenuCUI menuCUIRemote = new MenuCUI(pWriterRemote, 
-				scannerRemote);
+				scannerRemote, ttSVCUIRemote);
 		
 		//gửi thông điệp
 		menuCUIRemote.controlLoop();

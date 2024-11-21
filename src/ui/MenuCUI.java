@@ -11,6 +11,7 @@ public class MenuCUI {
 	private Scanner keyBoardInput = null;
 	private String prompt;
 	private String command;
+	private ThongTinSVCUI ttSVCUI = null;
 	//functions - methods
 	
 	//constructor
@@ -25,6 +26,14 @@ public class MenuCUI {
 		prompt = "->";
 		command = " ";
 	}
+	
+	public MenuCUI(PrintWriter _screenOutput, Scanner _keyBoardInput,
+			ThongTinSVCUI _ttSVCUI) {
+		this(_screenOutput, _keyBoardInput);//gọi lại constructor MenuCUI 2 tham số
+		ttSVCUI = _ttSVCUI;
+	}
+	
+	
 	
 	
 	public void controlLoop() {
@@ -48,13 +57,27 @@ public class MenuCUI {
 				help();//gọi đến hàm help
 			}
 			
+			if("them".equalsIgnoreCase(command)) {
+				themSinhVien();
+			}
+			
 		}
 
 	}
 	
+	private void themSinhVien() {
+		// TODO Auto-generated method stub
+		//đối tượng MenuCUI gửi thông điệp cho 
+		//đối tượng ????UI để người dùng nhập
+		//thông tin của sinh viên
+		ttSVCUI.nhapThongTinSV();
+		
+	}
+
 	private void help() {
 		screenOutput.println("~~~~~~~~~~Console Help Menu~~~~~~~~~");
 		screenOutput.println("[HELP] - Ho tro su dung phan mem");
+		screenOutput.println("[THEM] - Them moi sinh vien");
 		screenOutput.println("~~~~~~~~~~Console Help Menu~~~~~~~~~");
 	}
 	
