@@ -55,10 +55,12 @@ public class MenuCUI {
 			
 			if("help".equalsIgnoreCase(command)) {
 				help();//gọi đến hàm help
+				continue;
 			}
 			
 			if("them".equalsIgnoreCase(command)) {
 				themSinhVien();
+				continue;
 			}
 			
 		}

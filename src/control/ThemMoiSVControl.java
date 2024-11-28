@@ -6,11 +6,13 @@ import database.ThemMoiSVDAO;
 import entity.SinhVienKT;
 import entity.SinhVienKTPM;
 
+
 public class ThemMoiSVControl {
 	
 	//Fields
 	
 	private ThemMoiSVDAO themSVDAO = null;
+	//private ThongBaoThemMoiSVUI tbThemUI = null;
 	
 	public ThemMoiSVControl() {
 		

@@ -25,6 +25,16 @@ public class ThongTinSVCUI {
 		
 	}
 	
+	
+	public ThongTinSVCUI(PrintWriter _screenOutput, 
+			Scanner _keyBoardInput, ThemMoiSVControl _themSVControl ) {
+		//goi den constructor 02 tham so
+		this(_screenOutput, _keyBoardInput);
+		themSVControl = _themSVControl;
+			
+	}
+	
+	
 	public ThongTinSVCUI(PrintWriter _screenOutput, 
 			Scanner _keyBoardInput) {
 		screenOutput = _screenOutput;
