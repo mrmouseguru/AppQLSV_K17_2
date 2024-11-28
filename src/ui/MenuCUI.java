@@ -3,6 +3,8 @@ package ui;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+import control.InDanhSachSVControl;
+
 
 public class MenuCUI {
 	
@@ -12,12 +14,17 @@ public class MenuCUI {
 	private String prompt;
 	private String command;
 	private ThongTinSVCUI ttSVCUI = null;
+	private InDanhSachSVControl inDSSVControl = null;
 	//functions - methods
 	
 	//constructor
 	public MenuCUI() {
 		//
 		screenOutput = new PrintWriter(System.out);
+	}
+	
+	public void setInDSSVControl(InDanhSachSVControl _inDSSVControl) {
+		inDSSVControl = _inDSSVControl;
 	}
 	
 	public MenuCUI(PrintWriter _screenOutput, Scanner _keyBoardInput) {
@@ -63,10 +70,20 @@ public class MenuCUI {
 				continue;
 			}
 			
+			if("in".equalsIgnoreCase(command)) {
+				inDSSV();
+				continue;
+			}
+			
 		}
 
 	}
 	
+	private void inDSSV() {
+		
+		inDSSVControl.getDSSV();
+	}
+
 	private void themSinhVien() {
 		// TODO Auto-generated method stub
 		//đối tượng MenuCUI gửi thông điệp cho 
@@ -80,6 +97,8 @@ public class MenuCUI {
 		screenOutput.println("~~~~~~~~~~Console Help Menu~~~~~~~~~");
 		screenOutput.println("[HELP] - Ho tro su dung phan mem");
 		screenOutput.println("[THEM] - Them moi sinh vien");
+		screenOutput.println("[IN] - In danh sach sinh vien");
+
 		screenOutput.println("~~~~~~~~~~Console Help Menu~~~~~~~~~");
 	}
 	

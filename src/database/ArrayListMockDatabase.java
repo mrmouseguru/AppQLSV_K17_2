@@ -22,6 +22,11 @@ public class ArrayListMockDatabase {
 	public static void insertSinhVien(SinhVien sv) {
 		database.add(sv);
 	}
+
+	public static ArrayList<SinhVien> getAllSV() {
+		// TODO Auto-generated method stub
+		return database;
+	}
 	
 	
 
