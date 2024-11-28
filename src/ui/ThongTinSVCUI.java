@@ -79,6 +79,7 @@ public class ThongTinSVCUI {
 			double diemCss = keyBoardInput.nextDouble();
 			screenOutput.print(diemHtmlPrompt);screenOutput.flush();
 			double diemHtml = keyBoardInput.nextDouble();
+			keyBoardInput.nextLine();
 			
 			
 			//gửi thông điệp cho đối tượng ThemMoiSVControl
@@ -91,6 +92,7 @@ public class ThongTinSVCUI {
 			double diemMarketing = keyBoardInput.nextDouble();
 			screenOutput.print(diemSalesPrompt);screenOutput.flush();
 			double diemSales = keyBoardInput.nextDouble();
+			keyBoardInput.nextLine();
 			
 			themSVControl.taoSinhVien(hoTen, diaChi, ngaySinhJava, diemSales, diemMarketing, diemSales);
 		}

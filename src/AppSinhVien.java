@@ -5,6 +5,7 @@ import control.ThemMoiSVControl;
 import database.ArrayListMockDatabase;
 import database.ThemMoiSVDAO;
 import ui.MenuCUI;//phụ thuộc
+import ui.ThongBaoThemSVCUI;
 import ui.ThongTinSVCUI;
 
 public class AppSinhVien {
@@ -19,8 +20,12 @@ public class AppSinhVien {
 		
 		ThemMoiSVDAO themMoiSVDAORemote = new ThemMoiSVDAO();
 		
+		ThongBaoThemSVCUI tbThemSVCUIRemote = 
+				new ThongBaoThemSVCUI(pWriterRemote);
+		
 		ThemMoiSVControl themMoiSVControlRemote = new 
 				ThemMoiSVControl(themMoiSVDAORemote);
+		themMoiSVControlRemote.setTbThemSVCUI(tbThemSVCUIRemote);
 		
 		
 		ThongTinSVCUI ttSVCUIRemote = new 

@@ -3,8 +3,10 @@ package control;
 import java.util.Date;
 
 import database.ThemMoiSVDAO;
+import entity.SinhVien;
 import entity.SinhVienKT;
 import entity.SinhVienKTPM;
+import ui.ThongBaoThemSVCUI;
 
 
 public class ThemMoiSVControl {
@@ -13,9 +15,14 @@ public class ThemMoiSVControl {
 	
 	private ThemMoiSVDAO themSVDAO = null;
 	//private ThongBaoThemMoiSVUI tbThemUI = null;
+	private ThongBaoThemSVCUI tbThemSVCUI = null;
 	
 	public ThemMoiSVControl() {
 		
+	}
+	
+	public void setTbThemSVCUI(ThongBaoThemSVCUI _tbThemSVCUI) {
+		tbThemSVCUI = _tbThemSVCUI;
 	}
 	
 	public ThemMoiSVControl(ThemMoiSVDAO _themSVDAO) {
@@ -30,8 +37,7 @@ public class ThemMoiSVControl {
 		SinhVienKTPM svpm = new SinhVienKTPM(hoTen, diaChi, ngaySinh, 
 				diemJava, diemCss, diemHtml);
 		
-		themSVDAO.addSinhVien(svpm);
-		
+		doThemSinhVien(svpm);
 	}
 	
 	
@@ -41,7 +47,13 @@ public class ThemMoiSVControl {
 		SinhVienKT svkt = new SinhVienKT(hoTen, diaChi, ngaySinh, 
 				diemMarketing, diemSales);
 		
-		themSVDAO.addSinhVien(svkt);
+		doThemSinhVien(svkt);
+
+	}
+	
+	private void doThemSinhVien(SinhVien sv ) {
+		themSVDAO.addSinhVien(sv);
+		tbThemSVCUI.inThongBao("Them Moi SV Thanh Cong!!!");
 	}
 
 }
