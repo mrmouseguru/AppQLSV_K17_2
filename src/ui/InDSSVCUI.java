@@ -17,7 +17,7 @@ public class InDSSVCUI {
 		// TODO Auto-generated method stub
 		for (SinhVien sinhVien : dssv) {
 			
-			screenOutput.println(sinhVien);
+			screenOutput.printf("Diem TB: %f\n", sinhVien.tinhDiemTB());
 		}
 		
 	}

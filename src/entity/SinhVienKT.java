@@ -20,7 +20,7 @@ public SinhVienKT() {
 	}
 	
 	@Override
-	protected double tinhDiemTB() {
+	public double tinhDiemTB() {
 		// TODO Auto-generated method stub
 		return (2 * diemMarketing + diemSales) / 3;
 	}

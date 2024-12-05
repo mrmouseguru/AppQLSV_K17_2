@@ -22,7 +22,7 @@ public abstract class SinhVien {
 		ngaySinh = _ngaySinh;
 	}
 	
-	protected String getHoLuc() {
+	public String getHoLuc() {
 		double diemTB = tinhDiemTB();
         if (diemTB < 5) {
             return "Yếu";
@@ -37,6 +37,6 @@ public abstract class SinhVien {
         }
 	}
 	
-	protected abstract double tinhDiemTB();
+	public abstract double tinhDiemTB();
 
 }

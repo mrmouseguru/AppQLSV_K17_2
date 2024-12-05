@@ -23,7 +23,7 @@ public class SinhVienKTPM extends SinhVien {
 	
 
 	@Override
-	protected double tinhDiemTB() {
+	public double tinhDiemTB() {
 		// TODO Auto-generated method stub
 		return (2 * diemJava + diemHtml + diemCss) / 4;
 	}
