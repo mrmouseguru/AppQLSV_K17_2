@@ -1,8 +1,9 @@
 package entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public abstract class SinhVien {
+public abstract class SinhVien implements Serializable{
 	
 	private String hoTen;
 	private String nganh;
