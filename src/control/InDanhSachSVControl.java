@@ -3,6 +3,7 @@ package control;
 import java.util.ArrayList;
 
 import database.InDSSVDAO;
+import database.InDSSVDAOFile;
 import entity.SinhVien;
 import ui.InDSSVCUI;
 
@@ -10,6 +11,7 @@ public class InDanhSachSVControl {
 	// fields
 	private InDSSVDAO inDSSV = null;
 	private InDSSVCUI inDSSVCUI = null;
+	private InDSSVDAOFile inDSSVDAOFile = null;
 
 	// functions
 	public InDanhSachSVControl() {
@@ -21,8 +23,12 @@ public class InDanhSachSVControl {
 		inDSSVCUI = _inDSSVCUI;
 	}
 	
-	public void getDSSV() {
-		ArrayList<SinhVien> dssv =   inDSSV.getAllSV();
+	public void setInDSSVDAOFile(InDSSVDAOFile inDSSVDAOFile) {
+		this.inDSSVDAOFile = inDSSVDAOFile;
+	}
+	
+	public void inDSSV() {
+		ArrayList<SinhVien> dssv =   inDSSVDAOFile.getAllSV();
 		inDSSVCUI.inDSSV(dssv);
 	}
 }

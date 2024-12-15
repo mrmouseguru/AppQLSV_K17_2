@@ -5,6 +5,10 @@ import java.util.Date;
 
 public abstract class SinhVien implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2593189524794325047L;
 	private String hoTen;
 	private String nganh;
 	private String diaChi;
@@ -39,5 +43,8 @@ public abstract class SinhVien implements Serializable{
 	}
 	
 	public abstract double tinhDiemTB();
+	public String getHoTen() {
+		return hoTen;
+	}
 
 }

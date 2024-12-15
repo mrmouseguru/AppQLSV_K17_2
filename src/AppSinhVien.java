@@ -5,6 +5,7 @@ import control.InDanhSachSVControl;
 import control.ThemMoiSVControl;
 import database.ArrayListMockDatabase;
 import database.InDSSVDAO;
+import database.InDSSVDAOFile;
 import database.ThemMoiSVDAO;
 import database.ThemMoiSVDAOFile;
 import ui.InDSSVCUI;
@@ -27,6 +28,8 @@ public class AppSinhVien {
 		ThemMoiSVDAOFile themMoiSVDAOFile = new 
 				ThemMoiSVDAOFile("SinhVien.db");
 		
+		InDSSVDAOFile inDSSVDAOFile = new InDSSVDAOFile("SinhVien.db");
+		
 		InDSSVDAO inDSSVDAORemote = new InDSSVDAO();
 		
 		ThongBaoThemSVCUI tbThemSVCUIRemote = 
@@ -41,6 +44,7 @@ public class AppSinhVien {
 		themMoiSVControlRemote.setTbThemSVCUI(tbThemSVCUIRemote);
 		InDanhSachSVControl inDSControlRemote = new 
 				InDanhSachSVControl(inDSSVDAORemote, inDSSVCUIRemote);
+		inDSControlRemote.setInDSSVDAOFile(inDSSVDAOFile);
 		
 		
 		//CUI

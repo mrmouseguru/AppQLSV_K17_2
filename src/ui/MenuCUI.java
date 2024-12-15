@@ -81,7 +81,7 @@ public class MenuCUI {
 	
 	private void inDSSV() {
 		
-		inDSSVControl.getDSSV();
+		inDSSVControl.inDSSV();
 	}
 
 	private void themSinhVien() {
