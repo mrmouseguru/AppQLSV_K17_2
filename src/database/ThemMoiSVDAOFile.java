@@ -11,9 +11,10 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import control.ThemDAO;
 import entity.SinhVien;
 
-public class ThemMoiSVDAOFile {
+public class ThemMoiSVDAOFile extends ThemDAO {
 	//fields
 		private File fileData = null;
 		private List<SinhVien> tempData = null;

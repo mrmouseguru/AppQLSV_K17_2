@@ -9,26 +9,27 @@ import ui.InDSSVCUI;
 
 public class InDanhSachSVControl {
 	// fields
-	private InDSSVDAO inDSSV = null;
+	//private InDSSVDAO inDSSV = null;
 	private InDSSVCUI inDSSVCUI = null;
-	private InDSSVDAOFile inDSSVDAOFile = null;
+	//private InDSSVDAOFile inDSSVDAOFile = null;
+	private InDAO inDAO = null;
 
 	// functions
 	public InDanhSachSVControl() {
 
 	}
 
-	public InDanhSachSVControl(InDSSVDAO _inDSSV, InDSSVCUI _inDSSVCUI) {
-		inDSSV = _inDSSV;
+	public InDanhSachSVControl(InDAO inDAO, InDSSVCUI _inDSSVCUI) {
+		this.inDAO = inDAO;
 		inDSSVCUI = _inDSSVCUI;
 	}
 	
-	public void setInDSSVDAOFile(InDSSVDAOFile inDSSVDAOFile) {
-		this.inDSSVDAOFile = inDSSVDAOFile;
+	public void setInDSSVDAOFile(InDAO inDAO) {
+		this.inDAO = inDAO;
 	}
 	
 	public void inDSSV() {
-		ArrayList<SinhVien> dssv =   inDSSVDAOFile.getAllSV();
+		ArrayList<SinhVien> dssv =   inDAO.getAllSV();
 		inDSSVCUI.inDSSV(dssv);
 	}
 }

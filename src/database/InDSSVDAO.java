@@ -2,9 +2,10 @@ package database;
 
 import java.util.ArrayList;
 
+import control.InDAO;
 import entity.SinhVien;
 
-public class InDSSVDAO {
+public class InDSSVDAO implements InDAO {
 	
 	public InDSSVDAO() {
 		

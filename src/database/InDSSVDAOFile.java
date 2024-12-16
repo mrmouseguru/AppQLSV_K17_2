@@ -8,9 +8,10 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
+import control.InDAO;
 import entity.SinhVien;
 
-public class InDSSVDAOFile {
+public class InDSSVDAOFile implements InDAO {
 private File fileData = null;
 	
 	public InDSSVDAOFile(String fileName) {

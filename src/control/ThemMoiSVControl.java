@@ -14,9 +14,10 @@ public class ThemMoiSVControl {
 	
 	//Fields
 	
-	private ThemMoiSVDAO themSVDAO = null;
-	private ThemMoiSVDAOFile themSVDAOFile = null;
+	//private ThemMoiSVDAO themSVDAO = null;
+	//private ThemMoiSVDAOFile themSVDAOFile = null;
 	//private ThongBaoThemMoiSVUI tbThemUI = null;
+	private ThemDAO themDAO = null;
 	private ThongBaoThemSVCUI tbThemSVCUI = null;
 	
 	public ThemMoiSVControl() {
@@ -27,12 +28,12 @@ public class ThemMoiSVControl {
 		tbThemSVCUI = _tbThemSVCUI;
 	}
 	
-	public ThemMoiSVControl(ThemMoiSVDAO _themSVDAO) {
-		themSVDAO = _themSVDAO;
+	public ThemMoiSVControl(ThemDAO themDAO ) {
+		this.themDAO = themDAO;
 	}
 	
-	public void setThemSVDAOFile(ThemMoiSVDAOFile themSVDAOFile) {
-		this.themSVDAOFile = themSVDAOFile;
+	public void setThemSVDAOFile(ThemDAO themDAO) {
+		this.themDAO = themDAO;
 	}
 
 	public void taoSinhVien(String hoTen, String diaChi, Date ngaySinh,
@@ -59,7 +60,7 @@ public class ThemMoiSVControl {
 	
 	private void doThemSinhVien(SinhVien sv ) {
 		//themSVDAO.addSinhVien(sv);
-		themSVDAOFile.addSinhVien(sv);
+		themDAO.addSinhVien(sv);
 		tbThemSVCUI.inThongBao("Them Moi SV Thanh Cong!!!");
 	}
 
