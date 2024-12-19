@@ -8,6 +8,7 @@ import database.InDSSVDAO;
 import database.InDSSVDAOFile;
 import database.ThemMoiSVDAO;
 import database.ThemMoiSVDAOFile;
+import database.ThemMoiSVDAOMySQL;
 import ui.InDSSVCUI;
 import ui.MenuCUI;//phụ thuộc
 import ui.ThongBaoThemSVCUI;
@@ -27,8 +28,10 @@ public class AppSinhVien {
 		ThemMoiSVDAO themMoiSVDAORemote = new ThemMoiSVDAO();
 		ThemMoiSVDAOFile themMoiSVDAOFile = new 
 				ThemMoiSVDAOFile("SinhVien.db");
+		ThemMoiSVDAOMySQL themMoiSVDAOMySQL = new ThemMoiSVDAOMySQL();
 		
 		InDSSVDAOFile inDSSVDAOFile = new InDSSVDAOFile("SinhVien.db");
+		
 		
 		InDSSVDAO inDSSVDAORemote = new InDSSVDAO();
 		
@@ -39,7 +42,7 @@ public class AppSinhVien {
 		//Control
 		ThemMoiSVControl themMoiSVControlRemote = new 
 				ThemMoiSVControl(themMoiSVDAORemote);
-		themMoiSVControlRemote.setThemSVDAOFile(themMoiSVDAOFile);
+		themMoiSVControlRemote.setThemDAO(themMoiSVDAOMySQL);;
 		
 		themMoiSVControlRemote.setTbThemSVCUI(tbThemSVCUIRemote);
 		InDanhSachSVControl inDSControlRemote = new 

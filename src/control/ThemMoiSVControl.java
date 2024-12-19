@@ -24,6 +24,10 @@ public class ThemMoiSVControl {
 		
 	}
 	
+	public void setThemDAO(ThemDAO themDAO) {
+		this.themDAO = themDAO;
+	}
+	
 	public void setTbThemSVCUI(ThongBaoThemSVCUI _tbThemSVCUI) {
 		tbThemSVCUI = _tbThemSVCUI;
 	}
