@@ -24,7 +24,7 @@ public class InDanhSachSVControl {
 		inDSSVCUI = _inDSSVCUI;
 	}
 	
-	public void setInDSSVDAOFile(InDAO inDAO) {
+	public void setInDSSVDAO(InDAO inDAO) {
 		this.inDAO = inDAO;
 	}
 	
